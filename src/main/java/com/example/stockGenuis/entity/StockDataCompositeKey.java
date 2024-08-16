@@ -6,12 +6,12 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 @Embeddable
-public class CompositePrimaryKey implements Serializable {
+public class StockDataCompositeKey implements Serializable {
 
     private String stockTicker;
     private LocalDate date;
 
-    public CompositePrimaryKey(String stockTicker, LocalDate date){
+    public StockDataCompositeKey(String stockTicker, LocalDate date){
         this.stockTicker = stockTicker;
         this.date = date;
     }

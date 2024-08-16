@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 public class StockData {
 
     @EmbeddedId
-    private CompositePrimaryKey id;
+    private StockDataCompositeKey id;
     private double open;
     private double close;
     private double high;
@@ -15,7 +15,7 @@ public class StockData {
     private double intradayMovePercentage;
     private long volume;
 
-    public StockData(CompositePrimaryKey id, double open, double close, double high, double low, double intradayMovePercentage, long volume) {
+    public StockData(StockDataCompositeKey id, double open, double close, double high, double low, double intradayMovePercentage, long volume) {
         this.id = id;
         this.open = open;
         this.close = close;
@@ -25,11 +25,11 @@ public class StockData {
         this.volume = volume;
     }
 
-    public CompositePrimaryKey getId() {
+    public StockDataCompositeKey getId() {
         return id;
     }
 
-    public void setId(CompositePrimaryKey id) {
+    public void setId(StockDataCompositeKey id) {
         this.id = id;
     }
 
