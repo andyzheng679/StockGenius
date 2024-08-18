@@ -25,6 +25,10 @@ public class StockData {
         this.volume = volume;
     }
 
+    public StockData(){
+
+    }
+
     public StockDataCompositeKey getId() {
         return id;
     }

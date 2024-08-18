@@ -16,6 +16,10 @@ public class StockDataCompositeKey implements Serializable {
         this.date = date;
     }
 
+    public StockDataCompositeKey(){
+        
+    }
+
     public String getStockTicker() {
         return stockTicker;
     }
