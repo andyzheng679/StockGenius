@@ -17,7 +17,7 @@ public class StockDataCompositeKey implements Serializable {
     }
 
     public StockDataCompositeKey(){
-        
+
     }
 
     public String getStockTicker() {

@@ -6,3 +6,7 @@ If used for the composite key, you use @EmbeddedId annotation in the entity clas
 
 use @Embedded if used for other fields in the entity class.
 
+Two fields: the stock ticker symbol and the date of the data.
+
+Two constructors, with args to save the data, and without args to get the data in the database.
+
