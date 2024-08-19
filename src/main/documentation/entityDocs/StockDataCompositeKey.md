@@ -10,3 +10,6 @@ Two fields: the stock ticker symbol and the date of the data.
 
 Two constructors, with args to save the data, and without args to get the data in the database.
 
+Implements the Serializable interface, normally, single primary keys are already Serializable by default,
+since we're using a custom class to hold the primary key, JPA does not know how to serialize it.
+
