@@ -39,7 +39,7 @@ public class StockPrice {
     }
 
     public String test(){
-        return daily("IBM");
+        return daily("SPY");
     }
 
 }

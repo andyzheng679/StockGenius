@@ -4,6 +4,7 @@ import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Embeddable
 public class StockDataCompositeKey implements Serializable {
@@ -36,14 +37,13 @@ public class StockDataCompositeKey implements Serializable {
         this.date = date;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        StockDataCompositeKey that = (StockDataCompositeKey) o;
-//        return Objects.equals(stockTicker, that.stockTicker) &&
-//                Objects.equals(date, that.date);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StockDataCompositeKey that = (StockDataCompositeKey) o;
+        return Objects.equals(stockTicker, that.stockTicker) && Objects.equals(date, that.date);
+    }
 
 
 }

@@ -16,7 +16,7 @@ public class StockDataCompositeKeyTest {
         StockDataCompositeKey key2 = new StockDataCompositeKey("SPY", LocalDate.of(2024, 8, 19));
         StockDataCompositeKey key3 = new StockDataCompositeKey("AAPL", LocalDate.of(2024, 8, 19));
 
-        assertFalse(key1.equals(key2));
+        assertTrue(key1.equals(key2));
         assertTrue(key1.equals(key1));
         assertFalse(key1.equals(key3));
         assertFalse(key1.equals(null));

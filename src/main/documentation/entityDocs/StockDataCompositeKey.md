@@ -17,4 +17,5 @@ Serializable is a marker interface, doesn't require us to implement any methods,
 
 Byte stream is a sequence of bytes that can be used to represent data. 
 
-
+Override .equals method. The default compares memory reference, address in memory where an object is stored.
+New .equals method compares the content of the objects, will be used to check if the stock ticker and data date exists in the database
