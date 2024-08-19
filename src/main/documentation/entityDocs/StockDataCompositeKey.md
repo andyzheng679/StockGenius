@@ -13,3 +13,8 @@ Two constructors, with args to save the data, and without args to get the data i
 Implements the Serializable interface, normally, single primary keys are already Serializable by default,
 since we're using a custom class to hold the primary key, JPA does not know how to serialize it.
 
+Serializable is a marker interface, doesn't require us to implement any methods, indicates that objects of the class can be converted into a byte stream.
+
+Byte stream is a sequence of bytes that can be used to represent data. 
+
+
