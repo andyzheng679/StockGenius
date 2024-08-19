@@ -19,3 +19,10 @@ Byte stream is a sequence of bytes that can be used to represent data.
 
 Override .equals method. The default compares memory reference, address in memory where an object is stored.
 New .equals method compares the content of the objects, will be used to check if the stock ticker and data date exists in the database
+
+public boolean equals: compares current object with input parameter object. If the current object's memory reference is equals to input object's memory reference,
+return true, if input object is null or if current class does not equal input object's class, return false. 
+Set variable of StockDataCompositeKey datatype to input object, typecast it to StockDataCompositeKey, 
+so we can compare the current object's stockerTicker and date with the input object's stockTicker and date.
+
+
