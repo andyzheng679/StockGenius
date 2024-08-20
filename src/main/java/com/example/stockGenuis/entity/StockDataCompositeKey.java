@@ -45,5 +45,10 @@ public class StockDataCompositeKey implements Serializable {
         return Objects.equals(stockTicker, that.stockTicker) && Objects.equals(date, that.date);
     }
 
+    @Override
+    public int hashCode(){
+        return Objects.hash(stockTicker, date);
+    }
+
 
 }
