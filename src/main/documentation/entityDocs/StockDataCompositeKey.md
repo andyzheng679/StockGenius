@@ -3,7 +3,6 @@ Composite Primary Key, having multiple fields as your primary key, in this case,
 The @Embeddable annotation states that this class can be embedded in another entity class. Field wise.
 
 If used for the composite key, you use @EmbeddedId annotation in the entity class that you want it to be embedded in.
-
 use @Embedded if used for other fields in the entity class.
 
 Two fields: the stock ticker symbol and the date of the data.
@@ -15,14 +14,15 @@ since we're using a custom class to hold the primary key, JPA does not know how 
 
 Serializable is a marker interface, doesn't require us to implement any methods, indicates that objects of the class can be converted into a byte stream.
 
-Byte stream is a sequence of bytes that can be used to represent data. 
+Byte stream is a sequence of bytes that can be used to represent data.
 
 Override .equals method. The default compares memory reference, address in memory where an object is stored.
 New .equals method compares the content of the objects, will be used to check if the stock ticker and data date exists in the database
 
 public boolean equals: compares current object with input parameter object. If the current object's memory reference is equals to input object's memory reference,
-return true, if input object is null or if current class does not equal input object's class, return false. 
-Set variable of StockDataCompositeKey datatype to input object, typecast it to StockDataCompositeKey, 
+return true, if input object is null or if current class does not equal input object's class, return false.
+Set variable of StockDataCompositeKey datatype to input object, typecast it to StockDataCompositeKey,
 so we can compare the current object's stockerTicker and date with the input object's stockTicker and date.
 
-
+public int hashCode: the default hashCode is based on the memory reference, so even if the content are the same, they will have unique hashCodes,
+the overridden hashCode is based on content, so if the content is the same, even if there are two instance of a class, it will be the same hashCode.
