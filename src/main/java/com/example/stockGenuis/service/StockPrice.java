@@ -1,5 +1,6 @@
 package com.example.stockGenuis.service;
 
+import com.example.stockGenuis.repository.StockDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,13 +14,15 @@ public class StockPrice {
 
     private String aphaVantageURL = "https://www.alphavantage.co/query?function=";
 
-
     private RestTemplate restTemplate;
 
-    @Autowired
-    public StockPrice(RestTemplate restTemplate){
+    private StockDataRepository stockDataRepository;
 
-        this.restTemplate =restTemplate;
+    @Autowired
+    public StockPrice(RestTemplate restTemplate, StockDataRepository stockDataRepository){
+
+        this.restTemplate = restTemplate;
+        this.stockDataRepository = stockDataRepository;
     }
 
     public String getStockData(String range, String ticker){
