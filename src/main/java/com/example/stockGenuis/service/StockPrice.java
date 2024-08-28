@@ -18,6 +18,7 @@ public class StockPrice {
 
     @Autowired
     public StockPrice(RestTemplate restTemplate){
+
         this.restTemplate =restTemplate;
     }
 
@@ -38,8 +39,10 @@ public class StockPrice {
         return getStockData("TIME_SERIES_MONTHLY", ticker);
     }
 
-    public String test(){
-        return daily("SPY");
-    }
+//    public String test(){
+//        return daily("SPY");
+//    }
+
+
 
 }
