@@ -23,6 +23,8 @@ public boolean equals: compares current object with input parameter object. If t
 return true, if input object is null or if current class does not equal input object's class, return false.
 Set variable of StockDataCompositeKey datatype to input object, typecast it to StockDataCompositeKey,
 so we can compare the current object's stockerTicker and date with the input object's stockTicker and date.
+Objects.equals method is calling .equals method from the class based on the data type of the objects being compared. 
 
 public int hashCode: the default hashCode is based on the memory reference, so even if the content are the same, they will have unique hashCodes,
 the overridden hashCode is based on content, so if the content is the same, even if there are two instance of a class, it will be the same hashCode.
+

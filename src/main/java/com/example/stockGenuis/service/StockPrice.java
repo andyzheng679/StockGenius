@@ -42,9 +42,9 @@ public class StockPrice {
         return getStockData("TIME_SERIES_MONTHLY", ticker);
     }
 
-//    public String test(){
-//        return daily("SPY");
-//    }
+    public String test(){
+        return daily("SPY");
+    }
 
 
 
