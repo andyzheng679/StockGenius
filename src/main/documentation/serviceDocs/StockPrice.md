@@ -1,3 +1,8 @@
+Business Logic
+
+@Value: used to inject values into fields, method, or constructor from application.properties, using it to inject API key,
+so that application.properties can be hidden on github via gitignore.
+
 
 
 
