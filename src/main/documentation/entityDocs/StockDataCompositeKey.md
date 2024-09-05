@@ -27,4 +27,3 @@ Objects.equals method is calling .equals method from the class based on the data
 
 public int hashCode: the default hashCode is based on the memory reference, so even if the content are the same, they will have unique hashCodes,
 the overridden hashCode is based on content, so if the content is the same, even if there are two instance of a class, it will be the same hashCode.
-
