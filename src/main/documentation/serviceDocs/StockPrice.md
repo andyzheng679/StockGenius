@@ -12,7 +12,7 @@ private StockDataRepository stockDataRepository - Repository class, which provid
 
 private ObjectMapper objectMapper - Used to map JSON data into Java objects, vice versa.
 
-Constructor that will auto-wire an instance of RestTemplate and StockDataRepository into the class using Spring's dependency injection.
+Constructor that will auto-wire an instance of RestTemplate, StockDataRepository, ObjectMapper into the class using Spring's dependency injection.
 
 Methods:
 public String getStockData - takes in two params, range and the stock ticker, creates a URL using aphaVantageURL field, range, ticker and apiKey field.
