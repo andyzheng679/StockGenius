@@ -1,6 +1,7 @@
 package com.example.stockGenuis.service;
 
 import com.example.stockGenuis.repository.StockDataRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -18,11 +19,18 @@ public class StockPrice {
 
     private StockDataRepository stockDataRepository;
 
+    private ObjectMapper objectMapper;
+
     @Autowired
-    public StockPrice(RestTemplate restTemplate, StockDataRepository stockDataRepository){
+    public StockPrice(RestTemplate restTemplate, StockDataRepository stockDataRepository, ObjectMapper objectMapper){
 
         this.restTemplate = restTemplate;
         this.stockDataRepository = stockDataRepository;
+        this.objectMapper = objectMapper;
+    }
+
+    private double calculateIntradayMovePercentage(double open, double close){
+        return Math.round(((close - open) / open) * 100 * 100.0) / 100.0;
     }
 
     public String getStockData(String range, String ticker){

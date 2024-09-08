@@ -10,6 +10,8 @@ private RestTemplate restTemplate - Used to perform HTTP requests to external AP
 
 private StockDataRepository stockDataRepository - Repository class, which provides access to the database to perform CRUD operations.
 
+private ObjectMapper objectMapper - Used to map JSON data into Java objects, vice versa.
+
 Constructor that will auto-wire an instance of RestTemplate and StockDataRepository into the class using Spring's dependency injection.
 
 Methods:
@@ -22,6 +24,13 @@ public String daily - takes in param of the stock ticker and returns the daily r
 public String weekly - takes in param of the stock ticker and returns the weekly range and the stock ticker.
 
 public String monthly - takes in param of the stock ticker and returns the monthly range and the stock ticker.
+
+private double calculateIntradayMovePercentage - private method to be only called within the class,
+takes two param, open and close.
+((close - open) / open) * 100 will find the percentage with many decimal places.
+Then multiply it by 100 to move decimal by two.
+then Math.round() will round it to the nearest whole number, then divide by 100 to get two decimal places.
+
 
 @Transactional: used for database logic, ensures that the action is done at once, or none at all, especially in applications where multiple operations depend on each other. 
 If any operation fails, then the entire transaction is rolled back. This prevents partial updates to the database which can lead to inconsistent data. 
