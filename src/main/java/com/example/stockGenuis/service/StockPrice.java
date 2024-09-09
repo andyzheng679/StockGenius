@@ -29,6 +29,15 @@ public class StockPrice {
         this.objectMapper = objectMapper;
     }
 
+    public void mapSaveStockData(String stockData){
+
+        try{
+            //
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private double calculateIntradayMovePercentage(double open, double close){
         return Math.round(((close - open) / open) * 100 * 100.0) / 100.0;
     }
