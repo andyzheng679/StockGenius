@@ -1,6 +1,7 @@
 package com.example.stockGenuis.service;
 
 import com.example.stockGenuis.repository.StockDataRepository;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,7 +33,7 @@ public class StockPrice {
     public void mapSaveStockData(String stockData){
 
         try{
-            //
+            JsonNode root = objectMapper.readTree(stockData);
         } catch (Exception e) {
             e.printStackTrace();
         }
