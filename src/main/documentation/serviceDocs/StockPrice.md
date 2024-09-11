@@ -37,6 +37,7 @@ Catches the exception in variable e, then .printStackTrace will provide a report
 .readTree() method of ObjectMapper turns the JSON string into a tree-like structure. JsonNode datatype is used to hold and navigate the tree-like structure. 
 Naming convention "root", highest hierarchy/topmost level, the entry. The root is the entire JSON, "Meta Data" and "Time Series (Daily)" are the child nodes. 
 From the root (which contains the entire JSON), extract the child nodes, Meta data & Time Series (Daily), so we can access the data in them. 
+Extracting the stock ticker from the metaData, using method .asText() because we are converting the value of "2. Symbol" from JsonNode to a String.
 
 
 

@@ -38,7 +38,7 @@ public class StockPrice {
             JsonNode metaData = root.get("Meta Data");
             JsonNode timeSeries = root.get("Time Series (Daily)");
 
-            
+            String stockTicker = metaData.get("2. Symbol").asText();
 
         } catch (Exception e) {
             e.printStackTrace();
