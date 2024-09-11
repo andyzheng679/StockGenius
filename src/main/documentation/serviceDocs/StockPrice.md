@@ -39,6 +39,19 @@ Naming convention "root", highest hierarchy/topmost level, the entry. The root i
 From the root (which contains the entire JSON), extract the child nodes, Meta data & Time Series (Daily), so we can access the data in them. 
 Extracting the stock ticker from the metaData, using method .asText() because we are converting the value of "2. Symbol" from JsonNode to a String.
 
+public Iterator<Map.Entry<String,JsonNode>> fields()
+Returns:
+Iterator that can be used to traverse all key/value pairs for object nodes; empty iterator (no contents) for other types
+
+
+
+Iterator: Gives you the ability to loop through a collection (list, map,array) and access each element.
+Methods:
+    .hasNext() - Checks if there's another element in the collection, returns True if there are more elements.
+    .next() - Gets the next element in the collection.
+    .remove() - Removes the current element from the collection
+Instead of managing an index or counter, iterator can access each element in the collection. Think of something similar to a for-each loop.
+There are different types of collections, each of them are implemented differently. Iterator provides a consistent way to access elements, regardless of the collection type.
 
 
 @Transactional: used for database logic, ensures that the action is done at once, or none at all, especially in applications where multiple operations depend on each other. 

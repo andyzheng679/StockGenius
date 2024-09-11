@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Iterator;
+import java.util.Map;
+
 @Service
 public class StockPrice {
 
@@ -39,6 +42,9 @@ public class StockPrice {
             JsonNode timeSeries = root.get("Time Series (Daily)");
 
             String stockTicker = metaData.get("2. Symbol").asText();
+
+            Iterator<Map.Entry<String, JsonNode>> data = timeSeries.fields();
+
 
         } catch (Exception e) {
             e.printStackTrace();
