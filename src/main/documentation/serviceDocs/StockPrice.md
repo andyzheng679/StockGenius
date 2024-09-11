@@ -36,6 +36,9 @@ Mapping and saving the data are inside try catch block in the event there is an 
 Catches the exception in variable e, then .printStackTrace will provide a report that includes: type of exception, error message, and all the actions that led up to the error and the file/line.
 .readTree() method of ObjectMapper turns the JSON string into a tree-like structure. JsonNode datatype is used to hold and navigate the tree-like structure. 
 Naming convention "root", highest hierarchy/topmost level, the entry. The root is the entire JSON, "Meta Data" and "Time Series (Daily)" are the child nodes. 
+From the root (which contains the entire JSON), extract the child nodes, Meta data & Time Series (Daily), so we can access the data in them. 
+
+
 
 @Transactional: used for database logic, ensures that the action is done at once, or none at all, especially in applications where multiple operations depend on each other. 
 If any operation fails, then the entire transaction is rolled back. This prevents partial updates to the database which can lead to inconsistent data. 

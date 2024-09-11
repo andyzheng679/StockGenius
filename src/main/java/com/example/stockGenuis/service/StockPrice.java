@@ -34,6 +34,12 @@ public class StockPrice {
 
         try{
             JsonNode root = objectMapper.readTree(stockData);
+
+            JsonNode metaData = root.get("Meta Data");
+            JsonNode timeSeries = root.get("Time Series (Daily)");
+
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
