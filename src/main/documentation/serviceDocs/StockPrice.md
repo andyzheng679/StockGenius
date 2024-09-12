@@ -39,6 +39,8 @@ Naming convention "root", highest hierarchy/topmost level, the entry. The root i
 From the root (which contains the entire JSON), extract the child nodes, Meta data & Time Series (Daily), so we can access the data in them. 
 Extracting the stock ticker from the metaData, using method .asText() because we are converting the value of "2. Symbol" from JsonNode to a String.
 
+
+
 public Iterator<Map.Entry<String,JsonNode>> fields()
 Returns:
 Iterator that can be used to traverse all key/value pairs for object nodes; empty iterator (no contents) for other types
