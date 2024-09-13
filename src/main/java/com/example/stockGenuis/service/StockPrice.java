@@ -44,7 +44,12 @@ public class StockPrice {
             String stockTicker = metaData.get("2. Symbol").asText();
 
             Iterator<Map.Entry<String, JsonNode>> data = timeSeries.fields();
-            //
+            while(data.hasNext()){
+                Map.Entry<String, JsonNode> nextDataPair = data.next();
+
+                
+
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
