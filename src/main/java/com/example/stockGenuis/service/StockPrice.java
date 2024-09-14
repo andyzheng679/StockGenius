@@ -37,6 +37,9 @@ public class StockPrice {
         this.objectMapper = objectMapper;
     }
 
+
+
+
     public void mapSaveStockData(String getStockData){
 
         try{
