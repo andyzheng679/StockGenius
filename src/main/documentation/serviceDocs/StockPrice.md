@@ -51,12 +51,12 @@ Creating a StockDataCompositeKey object using stockTicker and localDate variable
 Creating a StockData entity using stockDataCompositeKey, open, close, high, low, intradayMovePercentage, volume variables.
 Saving StockData entity to the database using the stockDataRepository.
 
+public List<StockData> getDataViaStockTicker - Takes in a param of the stockTicker, and returns a list of StockData based on the StockTicker. 
+
 
 public Iterator<Map.Entry<String,JsonNode>> fields()
 Returns:
 Iterator that can be used to traverse all key/value pairs for object nodes; empty iterator (no contents) for other types
-
-
 
 Iterator: Gives you the ability to loop through a collection (list, map,array) and access each element.
 Methods:

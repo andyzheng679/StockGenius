@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -37,7 +38,9 @@ public class StockPrice {
         this.objectMapper = objectMapper;
     }
 
-
+    public List<StockData> getDataViaStockTicker(String stockTicker){
+        return stockDataRepository.findByStockDataCompositeKey_StockTicker(stockTicker);
+    }
 
 
     public void mapSaveStockData(String getStockData){
