@@ -44,7 +44,9 @@ The fields variable contains an iterator that allows us to loop through the key-
 While there is more data (date, data pairs) in the Iterator, assign that data to nextDataPair as a Map.Entry so it can be accessed/traversed. Data is also key-value pairs.
 Since the key is the date and the value is the data of that date in nextDataPair, we're going to assign the key to the String date, so we can later convert it to a LocalDate via the composite key entity,
 we then get the value and assign it to the JsonNode datesData, so we can use the .get() method to retrieve specific data, like "open", "close", etc.
-
+Converting the String date to LocalDate by using the .parse() method in the LocalDate class, it takes a string representation of a date and converts it into a LocalDate object.
+Assigning the open, close, high, low, and volume from datesData to variables. The values are accessed using their keys, "1. open" is a key, and the data is the value.
+Using method calculateIntradayMovePercentage to get the intraday move percentage.
 
 
 

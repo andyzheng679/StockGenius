@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -48,6 +49,14 @@ public class StockPrice {
                 Map.Entry<String, JsonNode> nextDataPair = data.next();
                 String date = nextDataPair.getKey();;
                 JsonNode datesData = nextDataPair.getValue();
+
+                LocalDate localDate = LocalDate.parse(date);
+                Double open = datesData.get("1. open").asDouble();
+                Double close = datesData.get("4. close").asDouble();
+                Double high = datesData.get("2. high").asDouble();
+                Double low = datesData.get("3. low").asDouble();
+                Double intradayMovePercentage = calculateIntradayMovePercentage(open, close);
+                Long volume = datesData.get("5. volume").asLong();
 
 
 
