@@ -47,7 +47,9 @@ we then get the value and assign it to the JsonNode datesData, so we can use the
 Converting the String date to LocalDate by using the .parse() method in the LocalDate class, it takes a string representation of a date and converts it into a LocalDate object.
 Assigning the open, close, high, low, and volume from datesData to variables. The values are accessed using their keys, "1. open" is a key, and the data is the value.
 Using method calculateIntradayMovePercentage to get the intraday move percentage.
-
+Creating a StockDataCompositeKey object using stockTicker and localDate variables, this will be the composite key for the stockTicker entity.
+Creating a StockData entity using stockDataCompositeKey, open, close, high, low, intradayMovePercentage, volume variables.
+Saving StockData entity to the database using the stockDataRepository.
 
 
 public Iterator<Map.Entry<String,JsonNode>> fields()

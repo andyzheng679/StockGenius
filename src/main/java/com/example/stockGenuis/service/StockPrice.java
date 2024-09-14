@@ -1,5 +1,7 @@
 package com.example.stockGenuis.service;
 
+import com.example.stockGenuis.entity.StockData;
+import com.example.stockGenuis.entity.StockDataCompositeKey;
 import com.example.stockGenuis.repository.StockDataRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -34,10 +37,10 @@ public class StockPrice {
         this.objectMapper = objectMapper;
     }
 
-    public void mapSaveStockData(String stockData){
+    public void mapSaveStockData(String getStockData){
 
         try{
-            JsonNode root = objectMapper.readTree(stockData);
+            JsonNode root = objectMapper.readTree(getStockData);
 
             JsonNode metaData = root.get("Meta Data");
             JsonNode timeSeries = root.get("Time Series (Daily)");
@@ -58,7 +61,10 @@ public class StockPrice {
                 Double intradayMovePercentage = calculateIntradayMovePercentage(open, close);
                 Long volume = datesData.get("5. volume").asLong();
 
+                StockDataCompositeKey stockDataCompositeKey = new StockDataCompositeKey(stockTicker, localDate);
+                StockData stockData = new StockData(stockDataCompositeKey, open, close, high, low, intradayMovePercentage, volume);
 
+                stockDataRepository.save(stockData);
 
             }
 
