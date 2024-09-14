@@ -46,8 +46,10 @@ public class StockPrice {
             Iterator<Map.Entry<String, JsonNode>> data = timeSeries.fields();
             while(data.hasNext()){
                 Map.Entry<String, JsonNode> nextDataPair = data.next();
+                String date = nextDataPair.getKey();;
+                JsonNode datesData = nextDataPair.getValue();
 
-                
+
 
             }
 

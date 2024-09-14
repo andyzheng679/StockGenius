@@ -42,6 +42,8 @@ Using an Iterator to loop through the map-like JSON collection and access each k
 The .fields() method from the JsonNode class returns an iterator over the key-value pairs, allowing us to traverse and process each entry in the JSON object.
 The fields variable contains an iterator that allows us to loop through the key-value pairs in the timeSeries JSON. Date and the data.
 While there is more data (date, data pairs) in the Iterator, assign that data to nextDataPair as a Map.Entry so it can be accessed/traversed. Data is also key-value pairs.
+Since the key is the date and the value is the data of that date in nextDataPair, we're going to assign the key to the String date, so we can later convert it to a LocalDate via the composite key entity,
+we then get the value and assign it to the JsonNode datesData, so we can use the .get() method to retrieve specific data, like "open", "close", etc.
 
 
 
